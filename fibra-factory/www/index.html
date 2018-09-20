@@ -1,49 +1,129 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Birlápio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="assets/css/materialize.css">
+  	<link rel="stylesheet" href="assets/css/index.css">
+  </head>
+  <body>
+    <nav class="castanho lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Birl</a>
+      </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container">
+      <div class="row">
+         <div class="col s12">
+           <ul class="tabs">
+             <li class="tab col s3 castanho-color"><a class="" href="#comida">Comida</a></li>
+             <li class="tab col s3 castanho-color"><a class="" href="#bebida">Bebida</a></li>
+           </ul>
+         </div>
+         <div id="comida" class="col s12">
+           <table class="striped">
+            <thead>
+              <tr>
+                  <th>Item</th>
+                  <th colspan="2">Preço</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Xis monstro</td>
+                <td>R$29,80</td>
+                <td><a class="btn btn-small castanho">+</a></td>
+              </tr>
+              <tr>
+                <td>Xis alter</td>
+                <td>R$21,80</td>
+                <td><a class="btn btn-small castanho">+</a></td>
+              </tr>
+              <tr>
+                <td>Xis supino</td>
+                <td>R$22,80</td>
+                <td><a class="btn btn-small castanho">+</a></td>
+              </tr>
+              <tr>
+                <td>Xis hora do show</td>
+                <td>R$27,50</td>
+                <td><a class="btn btn-small castanho">+</a></td>
+              </tr>
+              <tr>
+                <td>Xis trapézio</td>
+                <td>R$25,90</td>
+                <td><a class="btn btn-small castanho">+</a></td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+         <div id="bebida" class="col s12">
+           <table class="striped">
+              <thead>
+                <tr>
+                    <th>Item</th>
+                    <th colspan="2">Preço</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chope da casa (500ml)</td>
+                  <td>R$8,80</td>
+                  <td><a class="btn btn-small castanho">+</a></td>
+                </tr>
+                <tr>
+                  <td>Chope da casa (1l)</td>
+                  <td>R$15,90</td>
+                  <td><a class="btn btn-small castanho">+</a></td>
+                </tr>
+                <tr>
+                  <td>Brahma Chopp (500ml)</td>
+                  <td>R$6,80</td>
+                  <td><a class="btn btn-small castanho">+</a></td>
+                </tr>
+                <tr>
+                  <td>Suco do Bambam (500ml)</td>
+                  <td>R$9,50</td>
+                  <td><a class="btn btn-small castanho">+</a></td>
+                </tr>
+                <tr>
+                  <td>Água (500ml)</td>
+                  <td>R$4,50</td>
+                  <td><a class="btn btn-small castanho">+</a></td>
+                </tr>
+              </tbody>
+            </table>
+         </div>
+       </div>
+    </div>
+
+    <footer class="page-footer castanho">
+      <div class="container">
+        <div class="row">
+          <div class="col l3 s12">
+            <h5 class="white-text">Autores</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Matheus Gutierrez</a></li>
+              <li><a class="white-text" href="#!">Elias Mesalira</a></li>
+            </ul>
+          </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+      </div>
+    </footer>
+
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script type="text/javascript" src="assets/js/materialize.js"></script>
+  	<script type="text/javascript" src="assets/js/index.js"></script>
+
+  </body>
 </html>
