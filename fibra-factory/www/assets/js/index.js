@@ -57,3 +57,4 @@ var instance = M.Tabs.getInstance(elem);
 $('.tabs').tabs('methodName');
 $('.tabs').tabs('methodName', paramName);
 */
+var instance = M.Tabs.init(el, options);

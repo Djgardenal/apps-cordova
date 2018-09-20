@@ -1,13 +1,24 @@
-<html>
+ <html>
+<!--   <body class="container">
+    <br><br>
+
+
+  </body>-->
   <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Birlápio</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  	<link rel="stylesheet" href="assets/css/materialize.css">
-  	<link rel="stylesheet" href="assets/css/index.css">
-  </head>
+   <title>Fibra Factory</title>
+   <meta charset="utf-8"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <link rel="stylesheet" href="assets/css/index.css">
+   <link rel = "stylesheet" href = "assets/css/materialize.min.css">
+
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+   <script type="text/javascript" src="assets/js/index.js"></script>
+</head>
   <body>
     <nav class="castanho lighten-1" role="navigation">
       <div class="nav-wrapper container">
@@ -16,114 +27,106 @@
     </nav>
 
     <br><br>
+     <div class = "row">
+       <div class="col s12">
+         <ul class="tabs">
+           <li class="tab col s3 castanho-color"><a class="" href="#comida">Comida</a></li>
+           <li class="tab col s3 castanho-color"><a class="" href="#bebida">Bebida</a></li>
+         </ul>
+       </div>
 
-    <div class="container">
-      <div class="row">
-         <div class="col s12">
-           <ul class="tabs">
-             <li class="tab col s3 castanho-color"><a class="" href="#comida">Comida</a></li>
-             <li class="tab col s3 castanho-color"><a class="" href="#bebida">Bebida</a></li>
-           </ul>
-         </div>
-         <div id="comida" class="col s12">
+        <div id="comida" class="col s12">
            <table class="striped">
-            <thead>
-              <tr>
-                  <th>Item</th>
-                  <th colspan="2">Preço</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Xis monstro</td>
-                <td>R$29,80</td>
-                <td><a class="btn btn-small castanho">+</a></td>
-              </tr>
-              <tr>
-                <td>Xis alter</td>
-                <td>R$21,80</td>
-                <td><a class="btn btn-small castanho">+</a></td>
-              </tr>
-              <tr>
-                <td>Xis supino</td>
-                <td>R$22,80</td>
-                <td><a class="btn btn-small castanho">+</a></td>
-              </tr>
-              <tr>
-                <td>Xis hora do show</td>
-                <td>R$27,50</td>
-                <td><a class="btn btn-small castanho">+</a></td>
-              </tr>
-              <tr>
-                <td>Xis trapézio</td>
-                <td>R$25,90</td>
-                <td><a class="btn btn-small castanho">+</a></td>
-              </tr>
-            </tbody>
-          </table>
-         </div>
-         <div id="bebida" class="col s12">
+           <thead>
+             <tr>
+                 <th>Item</th>
+                 <th colspan="2">Preço</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>Xis monstro</td>
+               <td>R$29,80</td>
+               <td><a class="btn btn-small castanho">+</a></td>
+             </tr>
+             <tr>
+               <td>Xis alter</td>
+               <td>R$21,80</td>
+               <td><a class="btn btn-small castanho">+</a></td>
+             </tr>
+             <tr>
+               <td>Xis supino</td>
+               <td>R$22,80</td>
+               <td><a class="btn btn-small castanho">+</a></td>
+             </tr>
+             <tr>
+               <td>Xis hora do show</td>
+               <td>R$27,50</td>
+               <td><a class="btn btn-small castanho">+</a></td>
+             </tr>
+             <tr>
+               <td>Xis trapézio</td>
+               <td>R$25,90</td>
+               <td><a class="btn btn-small castanho">+</a></td>
+             </tr>
+           </tbody>
+         </table>
+        </div>
+        <div id="bebida" class="col s12">
            <table class="striped">
-              <thead>
-                <tr>
-                    <th>Item</th>
-                    <th colspan="2">Preço</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Chope da casa (500ml)</td>
-                  <td>R$8,80</td>
-                  <td><a class="btn btn-small castanho">+</a></td>
-                </tr>
-                <tr>
-                  <td>Chope da casa (1l)</td>
-                  <td>R$15,90</td>
-                  <td><a class="btn btn-small castanho">+</a></td>
-                </tr>
-                <tr>
-                  <td>Brahma Chopp (500ml)</td>
-                  <td>R$6,80</td>
-                  <td><a class="btn btn-small castanho">+</a></td>
-                </tr>
-                <tr>
-                  <td>Suco do Bambam (500ml)</td>
-                  <td>R$9,50</td>
-                  <td><a class="btn btn-small castanho">+</a></td>
-                </tr>
-                <tr>
-                  <td>Água (500ml)</td>
-                  <td>R$4,50</td>
-                  <td><a class="btn btn-small castanho">+</a></td>
-                </tr>
-              </tbody>
-            </table>
+             <thead>
+               <tr>
+                   <th>Item</th>
+                   <th colspan="2">Preço</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Chope da casa (500ml)</td>
+                 <td>R$8,80</td>
+                 <td><a class="btn btn-small castanho">+</a></td>
+               </tr>
+               <tr>
+                 <td>Chope da casa (1l)</td>
+                 <td>R$15,90</td>
+                 <td><a class="btn btn-small castanho">+</a></td>
+               </tr>
+               <tr>
+                 <td>Brahma Chopp (500ml)</td>
+                 <td>R$6,80</td>
+                 <td><a class="btn btn-small castanho">+</a></td>
+               </tr>
+               <tr>
+                 <td>Suco do Bambam (500ml)</td>
+                 <td>R$9,50</td>
+                 <td><a class="btn btn-small castanho">+</a></td>
+               </tr>
+               <tr>
+                 <td>Água (500ml)</td>
+                 <td>R$4,50</td>
+                 <td><a class="btn btn-small castanho">+</a></td>
+               </tr>
+             </tbody>
+           </table>
+        </div>
+     </div>
+     <footer class="page-footer castanho">
+       <div class="container">
+         <div class="row">
+           <div class="col l3 s12">
+             <h5 class="white-text">Autores</h5>
+             <ul>
+               <li><a class="white-text" href="#!">Matheus Gutierrez</a></li>
+               <li><a class="white-text" href="#!">Elias Mesalira</a></li>
+             </ul>
+           </div>
          </div>
        </div>
-    </div>
-
-    <footer class="page-footer castanho">
-      <div class="container">
-        <div class="row">
-          <div class="col l3 s12">
-            <h5 class="white-text">Autores</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Matheus Gutierrez</a></li>
-              <li><a class="white-text" href="#!">Elias Mesalira</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-        </div>
-      </div>
-    </footer>
-
-  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script type="text/javascript" src="assets/js/materialize.js"></script>
-  	<script type="text/javascript" src="assets/js/index.js"></script>
-
+       <div class="footer-copyright">
+         <div class="container">
+         Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+         </div>
+       </div>
+     </footer>
   </body>
 </html>
