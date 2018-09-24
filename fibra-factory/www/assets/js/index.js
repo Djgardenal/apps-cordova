@@ -48,8 +48,6 @@ app.initialize();
 
 
 /*TABS*/
-var instance = M.Tabs.getInstance(elem);
-
 /*jQuery Method Calls
   You can still use the old jQuery plugin method calls.
   But you won't be able to access instance properties.
@@ -57,4 +55,13 @@ var instance = M.Tabs.getInstance(elem);
 $('.tabs').tabs('methodName');
 $('.tabs').tabs('methodName', paramName);
 */
-var instance = M.Tabs.init(el, options);
+
+$(function(){
+  $(".add-item").click(function(){
+    $valor = $(this).find(".qtd");
+    valor = Number($valor.text());
+    valor ++;
+    $valor.text(valor++);
+    console.log(Number(valor));
+  });
+});
