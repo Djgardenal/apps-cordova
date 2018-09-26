@@ -62,6 +62,50 @@ $(function(){
     valor = Number($valor.text());
     valor ++;
     $valor.text(valor++);
+
+    //Matheus {
+    var newRow = $("<tr>");
+    var cols = "";
+
+    cols += '<td>' + $(this).find('.nome').text() + '</td>';
+    cols += '<td>' + $(this).find('.valor').text() + '</td>';
+    newRow.append(cols);
+    $("#shoppingCart").append(newRow);
+    //}
+
     console.log(Number(valor));
   });
+});
+
+
+
+/*MODAL*/
+$(document).ready(function() {
+  $('.modal').modal({
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: .5, // Opacity of modal background
+    inDuration: 300, // Transition in duration
+    outDuration: 200, // Transition out duration
+    startingTop: '4%', // Starting top style attribute
+    endingTop: '10%', // Ending top style attribute
+    ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+      var $trigger = $(trigger[0]);
+      var idTrigger = $trigger.attr('id');
+      console.log(idTrigger);
+      $("#buy").click(function(){
+
+        //O que acontece se usuário compra
+
+      });
+    },
+    complete: function() {
+    } // Callback for Modal close
+  }
+);
+
+  $("#botao*").click(abreModal);
+
+  function abreModal(event){
+    $('#modal1').modal('open');
+  }
 });
