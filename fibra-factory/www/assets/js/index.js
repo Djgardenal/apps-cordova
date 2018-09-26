@@ -46,6 +46,13 @@ var app = {
 app.initialize();
 
 
+function moneyToFloat(value){
+  return Number(value.substring(2).replace(',', '.'));
+}
+function floatToMoney(value){
+  return ("R$" + value).replace('.', ',');
+}
+
 
 /*TABS*/
 /*jQuery Method Calls
@@ -55,6 +62,7 @@ app.initialize();
 $('.tabs').tabs('methodName');
 $('.tabs').tabs('methodName', paramName);
 */
+var total=0;
 
 $(function(){
   $(".add-item").click(function(){
@@ -66,11 +74,14 @@ $(function(){
     //Matheus {
     var newRow = $("<tr>");
     var cols = "";
+    var preco = moneyToFloat($(this).find('.valor').text());
+    total += preco;
 
     cols += '<td>' + $(this).find('.nome').text() + '</td>';
     cols += '<td>' + $(this).find('.valor').text() + '</td>';
     newRow.append(cols);
-    $("#shoppingCart").append(newRow);
+    $("#shoppingCart").prepend(newRow);
+    $("#shoppingCart").find('.total').text(floatToMoney(total));
     //}
 
     console.log(Number(valor));

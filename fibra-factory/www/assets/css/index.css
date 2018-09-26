@@ -112,6 +112,12 @@ h1 {
 .btn-small[class='castanho']:hover, .btn-small[class='castanho']:focus, .btn-small[class='castanho']:active {
   background-color: #502000 !important;
 }
+.total {
+  float: right;
+  color: #F22;
+  font-weight: bold;
+  font-size: 130%;
+}
 
 /*Template*/
 .icon-block {
