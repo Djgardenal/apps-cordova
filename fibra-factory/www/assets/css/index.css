@@ -118,6 +118,10 @@ h1 {
   font-weight: bold;
   font-size: 130%;
 }
+.btn-birl {
+  text-align: center;
+  margin: 15px 5px 20px;
+}
 
 /*Template*/
 .icon-block {
