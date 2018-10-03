@@ -104,8 +104,40 @@ $(document).ready(function() {
       var idTrigger = $trigger.attr('id');
       console.log(idTrigger);
       $("#buy").click(function(){
+				var itens = Array.prototype.map.call(document.querySelectorAll('#shoppingCart tr'), function(tr){
+  				return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
+    			return td.innerHTML;
+    			});
+  			});
+				itens.pop();
+				itens.sort();
+				console.log(itens);
+				console.log(itens.length);
 
-        //O que acontece se usuário compra
+				var quant;
+				var itensTotal = [];
+				var compara;
+				var contem;
+				for (var i = 0; i < itens.length; i++) {
+					contem = false;
+					itens[i].push(1);
+					compara = itens[i];
+					for (var j = 0; j < itensTotal.length; j++) {
+						if (compara[0] == itensTotal[j][0]) {
+							itensTotal[j][2]++;
+							contem = true;
+						}
+					}
+					if (!contem) {
+						itens[i][1] = moneyToFloat(itens[i][1]);
+						itensTotal.push(itens[i]);
+					}
+				}
+				var json = { mesa:$("#mesa").val(), itens:[]}
+				for (var i = 0; i < itensTotal.length; i++) {
+					json['itens'].push({"nome":itensTotal[i][0],"valor":itensTotal[i][1],"quantidade":itensTotal[i][2]});
+				}
+				console.log(json);
 
       });
     },
