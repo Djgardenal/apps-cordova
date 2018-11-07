@@ -38,8 +38,6 @@ var app = {
 
     listeningElement.setAttribute('style', 'display:none;');
     receivedElement.setAttribute('style', 'display:block;');
-
-    console.log('Received Event: ' + id);
   }
 };
 
@@ -81,10 +79,8 @@ $(function(){
     cols += '<td>' + $(this).find('.valor').text() + '</td>';
     newRow.append(cols);
     $("#shoppingCart").prepend(newRow);
-    $("#shoppingCart").find('.total').text(floatToMoney(total));
+    $("#shoppingCart").find('.total').text(floatToMoney(number_format(total, 2, ',', '.')));
     //}
-
-    console.log(Number(valor));
   });
 
 
@@ -113,7 +109,6 @@ $(document).ready(function() {
     ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
       var $trigger = $(trigger[0]);
       var idTrigger = $trigger.attr('id');
-      console.log(idTrigger);
       $("#buy").click(function(){
         var itens = Array.prototype.map.call(document.querySelectorAll('#shoppingCart tr'), function(tr){
           return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
@@ -122,8 +117,6 @@ $(document).ready(function() {
         });
         itens.pop();
         itens.sort();
-        console.log(itens);
-        console.log(itens.length);
 
         var quant;
         var itensTotal = [];
@@ -144,12 +137,11 @@ $(document).ready(function() {
             itensTotal.push(itens[i]);
           }
         }
-        var json = { mesa:$("#mesa").val(), itens:[]}
+        var json = { mesa:$("#mesa").val(), total:$(".total").text(), itens:[]}
         for (var i = 0; i < itensTotal.length; i++) {
           json['itens'].push({"nome":itensTotal[i][0],"valor":itensTotal[i][1],"quantidade":itensTotal[i][2]});
         }
         console.log(json);
-
       });
     },
     complete: function() {
@@ -163,3 +155,26 @@ function abreModal(event){
   $('#modal1').modal('open');
 }
 });
+
+/*Formatando números*/
+function number_format (number, decimals, dec_point, thousands_sep) {
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
